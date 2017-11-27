@@ -1,0 +1,252 @@
+<style type="text/css">
+/* Temp styles */
+.header, .sidebar, .content, .footer { border: 5px solid black; }
+.content, .sidebar, .footer { border-top: none; }
+.sidebar.right { border-right: none;     float: left;}
+.sidebar.left { border-left: none; }
+div, span, p{
+   /* border: 1px solid red;*/
+}
+
+
+#header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#header li {
+    float: left;
+}
+
+#header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+#header li a:hover{
+    background-color: #111;
+}
+
+
+
+
+
+
+
+
+/* Core styles */
+a {
+    /*color: #0000cc;*/
+    text-decoration: none;
+}
+a.menuitem{
+    color: black;
+}
+a.rowheader {
+    color: white;
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    border: none;
+    /*-moz-border-radius:28px;
+    border-radius:28px;
+    color: black;*/
+    padding: 1px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    height:20px;
+    width:70px;
+     color: white;
+    background-color: #007AFF;
+
+}
+
+.current {
+  font-weight: bold;
+  font-style: italic;
+  /*letter-spacing: 3px;*/
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+h7 {
+    text-decoration: underline;
+}
+h6 {
+    font-size: 14px;
+    text-decoration: underline;
+     font-weight: bold;
+}
+
+
+#content-body-wrapper {
+    display:table;
+    border-collapse:collapse;
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+    font-size: 14px;
+}
+         
+#content-body {
+    display:table-row;
+}
+#leftnavigation, #maincontent {
+    display:table-cell;
+    padding: 10px;
+}
+
+#header {
+    position: relative; /* needed for stacking */
+    height: 40px;
+    width: 100%;
+    background: #a6a6a6;
+}
+
+#leftnavigation {
+    width: 150px;
+    border-top: none;
+    background: #cccccc;
+    
+}
+
+
+
+#footer {
+    position: relative; /* needed for stacking */
+    width: 100%;
+    height: 100px;
+      font-family: 'Helvetica Neue', Helvetica, Arial;
+  font-size: 10px;
+  text-align: center;
+}
+.table{
+  display: table;
+    margin: 0 0 0 0;
+  width: 100%;
+/*border-collapse: collapse*/
+  @media screen and (max-width: 580px);
+    display: block;
+}
+.row{
+  display: table-row;
+  background: white;
+  border:  1px solid white;
+}
+
+
+.alert {
+    background: #ED4E4E;
+    color: white;
+   /* border-radius: 10px 10px 10px 10px; 
+    -moz-border-radius: 10px 10px 10px 10px;*/
+}
+.row.alert {
+    background: #e60000;
+    color: white;
+}
+
+/*
+.row.alert > div:last-child {
+  border-radius: 0 10px 10px 0; 
+  -moz-border-radius: 0 10px 10px 0;
+ 
+}
+.row.alert > div:first-child {
+  border-radius: 10px 0px 0px 10px; 
+  -moz-border-radius: 10px 0px 0px 10px;
+}*/
+
+.row:nth-of-type(odd){
+        display: table-row;
+    background: #e9e9e9;
+}
+
+.row:nth-of-type(odd).alert{
+        display: table-row;
+    background: #e60000;
+}
+.row:nth-of-type(odd).warning{
+        display: table-row;
+    background: #ffa64d;
+}
+
+.cell{
+    width: 100px;
+    padding: 6px 12px;
+    display: table-cell;
+}
+.numbercell{
+    width: 120px;
+    padding: 6px 12px;
+  display: table-cell;
+  text-align: right;
+}
+.textcell{
+    width: 300px;
+    padding: 6px 12px;
+  display: table-cell;
+  text-align: left;
+}
+
+.leftcell{
+    width: 200px;
+    padding: 6px 12px;
+    display: table-cell;
+}
+
+.cell.formtext{
+    width: 150px;
+  text-align: right;
+}
+.rowheader{
+    display: table-row;
+    font-weight: 900;
+    color: #ffffff;
+    background: #27ae60;
+}
+
+.rowfooter{
+    display: table-row;
+    font-weight: 900;
+    color: #ffffff;
+    background: #000000;
+}
+
+
+.button{
+    border: none;
+    -moz-border-radius:28px;
+    border-radius:28px;
+    color: black;
+    padding: 1px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+     height:20px;
+    width:150px;
+}
+.button.back{
+    background: #ffb3b3;
+}
+.button.submit {
+     color: white;
+    background-color: #007AFF; /* Green: #4CAF50 apple blue is: #007AFF*/
+    /*display: inline-block;*/
+}
+
+
+.warning {
+    background: #ffa64d;
+    color: white;
+}
+</style>
+    
