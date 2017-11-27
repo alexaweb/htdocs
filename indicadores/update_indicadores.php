@@ -37,7 +37,7 @@
         
         
         // This redirects the user back to the login page after they register
-        header("Location: /audit/htdocs/indicadores/display_indicadores_mes.php?");
+        header("Location: /audit/indicadores/display_indicadores_mes.php?");
         
         // Calling die or exit after performing a redirect using the header function
         // is critical.  The rest of your PHP script will continue to execute and
@@ -48,7 +48,7 @@
 ?>
 <h2>Cargar Indicadores</h2>
 
-<form action="/audit/htdocs/indicadores/carga/carga_diaria_indicadores.php" method="get">
+<form action="/audit/indicadores/carga/carga_diaria_indicadores.php" method="get">
     Fecha:
     <input type="text" name="fecha" value="<?php echo $fecha?>" /> 
     <br />
