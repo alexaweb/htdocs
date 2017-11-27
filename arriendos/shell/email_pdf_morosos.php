@@ -2,7 +2,7 @@
 
 	$current=323;
 		$dbfile = "arriendosDB.php";
-		require_once('/var/www/includes/common.php');
+		require_once('../../../includes/common.php');
 		//require_once('/var/www/includes/cmiheader.php');
 		setlocale(LC_TIME, 'es_ES.UTF-8');
 		date_default_timezone_set('America/Santiago');
@@ -62,8 +62,8 @@ $total_mora_clp = 0;
 <title>Gestión Cicarelli</title>
 <link rel="icon" 
       type="image/png" 
-      href="/www_includes/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="/www_includes/cmistyles.css" />
+      href="/audit/css/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/audit/csss/cmistyles.css" />
 </head>
 <body>
 	<div id="content-body-wrapper" >
