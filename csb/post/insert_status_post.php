@@ -2,8 +2,8 @@
 	$current=511;
 	$dbfile = "csbDB.php";
     // First we execute our common code to connection to the database and start the session
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    require $path.'/../includes/common.php';
+    //$path = $_SERVER['DOCUMENT_ROOT'];
+    require '../../../includes/common.php';
 	//require_once('../csb_common.php');
 	        
     

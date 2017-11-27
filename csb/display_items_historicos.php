@@ -1,7 +1,7 @@
 <?php
 	//$tr_cc_id = $_GET['tr_cc_id'];
 	$current="510";
-	require_once('../csb_common.php');
+	require_once('../../includes/csb_common.php');
 	
         try
         {

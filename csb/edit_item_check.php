@@ -1,6 +1,6 @@
 <?php
 	$current=511;
-	require_once('../csb_common.php');
+	require_once('../../includes/csb_common.php');
     
    
     

@@ -2,7 +2,7 @@
 	$item_id = $_GET['item_id'];
 	$item_descripcion = $_GET['item_descripcion'];
 	$current="511";
-	require_once('../csb_common.php');
+	require_once('../../includes/csb_common.php');
 	
 	$fecha = date("Y-m-d", strtotime( '-0 days' ) );
 	
