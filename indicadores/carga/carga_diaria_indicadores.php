@@ -38,7 +38,7 @@ $ano = date("Y",$first_date);
 //echo "$fecha-$ayer<br>";
 	  
 try {
-    $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", 'root', 'oSTI.sCA');
+    $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 	
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
