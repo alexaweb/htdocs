@@ -63,7 +63,7 @@ $total_mora_clp = 0;
 <link rel="icon" 
       type="image/png" 
       href="/audit/css/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="/audit/csss/cmistyles.css" />
+<link rel="stylesheet" type="text/css" href="/audit/css/cmistyles.css" />
 </head>
 <body>
 	<div id="content-body-wrapper" >
