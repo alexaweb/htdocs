@@ -41,7 +41,7 @@
 		$co_id = $_POST['co_id'];
 		
 		//$sql = "select valor from indicadores.indicadores where codigo='uf' and fecha = '{$fecha}';";
-                $sql = "call proc arriendos.get_valor_uf('{$fecha}');";
+                $sql = "call arriendos.get_valor_uf('{$fecha}');";
                 
         $stmt = $db->prepare($sql);
         $result = $stmt->execute();
