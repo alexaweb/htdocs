@@ -5,7 +5,7 @@
 	//$menufile = "indicadoresmenu.php";
         //require_once ('/var/www/includes/common.php');
 	//require_once('/var/www/includes/cmiheader.php');
-        require_once('../../indicadores/indicadores_common.php');
+        require_once('../../includes/indicadores_common.php');
     
     
     $fecha_hoy = date("Y-m-d");
