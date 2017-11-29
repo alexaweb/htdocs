@@ -49,7 +49,7 @@
 		//echo $tipo . "afda";
 		if(empty($_GET['monto_uf']))
 		{
-			$sql = "call get_valor_uf('{$fecha}');";
+			$sql = "call arriendos.get_valor_uf('{$fecha}');";
 			$stmt = $db->prepare($sql);
 			$result = $stmt->execute();
 			$row = $stmt->fetch();
@@ -59,7 +59,7 @@
 		
 		if(empty($_GET['monto']))
 		{
-			$sql = "call get_valor_uf('{$fecha}');";
+			$sql = "call arriendos.get_valor_uf('{$fecha}');";
 			$stmt = $db->prepare($sql);
 			$result = $stmt->execute();
 			$row = $stmt->fetch();

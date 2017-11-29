@@ -1,6 +1,6 @@
 <?php
 	$current=32;
-	require_once('../cmi_common.php');
+	require_once('../../../includes/cmi_common.php');
 	        
     
     // This if statement checks to determine whether the transaction has been submitted
