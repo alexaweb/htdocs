@@ -1,6 +1,6 @@
 <?php
 	$current = "41";
-	require_once('home_common.php');
+	require_once('../../includes/home_common.php');
 
     // At the top of the page we check to see whether the user is logged in or not
     if(empty($_SESSION['user']))
