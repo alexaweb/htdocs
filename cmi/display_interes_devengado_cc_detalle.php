@@ -105,7 +105,7 @@
 
 				try
 				{
-					$sql3 = "select sum(tr_monto) as monto, sum(tr_monto_uf) as monto_uf from transacciones where tr_cc_id = $cc_id and tr_fecha_valor > '{$fecha1}' and tr_fecha_valor <= '{$fecha2}' and tr_tipo_transaccion = 1;";
+					$sql3 = "select ifnull(sum(tr_monto),0) as monto, ifnull(sum(tr_monto_uf),0) as monto_uf from transacciones where tr_cc_id = $cc_id and tr_fecha_valor > '{$fecha1}' and tr_fecha_valor <= '{$fecha2}' and tr_tipo_transaccion = 1;";
 					$stmt3 = $db->prepare($sql3);
 					$result3 = $stmt3->execute();
 					$row3 = $stmt3->fetch();
@@ -121,7 +121,7 @@
 
 				try
 				{
-					$sql4 = "select sum(tr_monto) as monto, sum(tr_monto_uf) as monto_uf from transacciones where tr_cc_id = $cc_id and tr_fecha_valor > '{$fecha1}' and tr_fecha_valor <= '{$fecha2}' and tr_tipo_transaccion = 2;";
+					$sql4 = "select ifnull(sum(tr_monto),0) as monto, ifnull(sum(tr_monto_uf),0) as monto_uf from transacciones where tr_cc_id = $cc_id and tr_fecha_valor > '{$fecha1}' and tr_fecha_valor <= '{$fecha2}' and tr_tipo_transaccion = 2;";
 					$stmt4 = $db->prepare($sql4);
 					$result4 = $stmt4->execute();
 					$row4 = $stmt4->fetch();

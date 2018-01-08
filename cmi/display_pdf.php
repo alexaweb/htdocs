@@ -4,14 +4,14 @@
 	$dbfile = "cmiDB.php";
 	//$menufile = "cmimenu.php";
 	//$path = "/var/www/html/cmi";
-	require_once('/var/www/includes/common.php');
+	require_once('../../includes/common.php');
 	//require_once('/var/www/includes/cmiheader.php');
 	setlocale(LC_TIME, 'es_ES.UTF-8');
   date_default_timezone_set('America/Santiago');
 
 
-    require_once('/var/www/includes/fpdf/fpdf.php');
-    require_once('/var/www/includes/phpmailer/PHPMailerAutoload.php');
+    require_once('../../includes/fpdf/fpdf.php');
+    require_once('../../includes/phpmailer/PHPMailerAutoload.php');
     $ano = $_GET['ano'];
 		$mes = $_GET['mes'];
 		$cc_id = $_GET['cc_id'];
