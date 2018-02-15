@@ -34,7 +34,7 @@ $objPHPExcel->setActiveSheetIndex(0);
 // Initialise the Excel row number
 $rowCount = 1;
 
-       /* $p_orden = $_GET['p_orden'];
+        $p_orden = $_GET['p_orden'];
         if(empty($p_orden))
         {
             
@@ -54,7 +54,7 @@ $rowCount = 1;
             }
         } else
         { 
-        */
+        
         
           try
             {
@@ -70,7 +70,7 @@ $rowCount = 1;
             {
                die("Failed to run query: " . $ex->getMessage());
             }   
-        //}   
+        }   
 
  // Set the active Excel worksheet to sheet 0
 $objPHPExcel->setActiveSheetIndex(0);
