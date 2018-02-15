@@ -44,7 +44,7 @@
 
 
 <h2>Status Items Pendientes</h2>
-<a href="export/export_items_pendientes_xls.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=<?=$fecha_orden?>">EXPORT XLS</a>
+<a href="export/export_items_pendientes_xls.php">EXPORT XLS</a>
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">ID</div>
