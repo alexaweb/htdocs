@@ -22,7 +22,7 @@ $objPHPExcel = new PHPExcel();
 // Set document properties
 $objPHPExcel->getProperties()->setCreator("CMI Inversiones S.A.")
 							 ->setLastModifiedBy("CMI Inversiones S.A.")
-							 ->setTitle("CSB"")
+							 ->setTitle("CSB")
 							 ->setSubject("Procurement")
 							 ->setDescription("Status Compras y Envios")
 							 ->setKeywords("office 2007 openxml php")
