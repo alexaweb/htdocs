@@ -34,7 +34,7 @@ $objPHPExcel->setActiveSheetIndex(0);
 // Initialise the Excel row number
 $rowCount = 1;
 
-        $p_orden = $_GET['p_orden'];
+       /* $p_orden = $_GET['p_orden'];
         if(empty($p_orden))
         {
             
@@ -53,7 +53,9 @@ $rowCount = 1;
                die("Failed to run query: " . $ex->getMessage());
             }
         } else
-        {
+        { 
+        */
+        
           try
             {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -68,7 +70,7 @@ $rowCount = 1;
             {
                die("Failed to run query: " . $ex->getMessage());
             }   
-        }   
+        //}   
 
  // Set the active Excel worksheet to sheet 0
 $objPHPExcel->setActiveSheetIndex(0);
