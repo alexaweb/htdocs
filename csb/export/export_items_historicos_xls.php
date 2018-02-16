@@ -34,43 +34,20 @@ $objPHPExcel->setActiveSheetIndex(0);
 // Initialise the Excel row number
 $rowCount = 1;
 
-        $p_orden = $_GET['p_orden'];
-        if(empty($p_orden))
+                try
         {
-            
-            try
-            {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
-            $sql = "call proc_display_items_pendientes();";
+            $sql = "call proc_display_items;";
 		//	echo $sql;
             $stmt = $db->prepare($sql);
             $result = $stmt->execute();
             $data_tr = $stmt->fetchAll();
 			$stmt->closeCursor();
-            }
-            catch(PDOException $ex)
-            {
-               die("Failed to run query: " . $ex->getMessage());
-            }
-        } else
-        { 
-        
-        
-          try
-            {
-            //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
-            $sql = "call proc_display_items_pendientes_order($p_orden);";
-		//	echo $sql;
-            $stmt = $db->prepare($sql);
-            $result = $stmt->execute();
-            $data_tr = $stmt->fetchAll();
-			$stmt->closeCursor();
-            }
-            catch(PDOException $ex)
-            {
-               die("Failed to run query: " . $ex->getMessage());
-            }   
-        }   
+        }
+        catch(PDOException $ex)
+        {
+           die("Failed to run query: " . $ex->getMessage());
+        }  
 
  // Set the active Excel worksheet to sheet 0
 $objPHPExcel->setActiveSheetIndex(0);
@@ -167,7 +144,7 @@ $objPHPExcel->getActiveSheet()->getColumnDimension("N")->setAutoSize(true);
 //$objPHPExcel->getActiveSheet()->getColumnDimension("P")->setAutoSize(true);
 //$objPHPExcel->getActiveSheet()->getColumnDimension("Q")->setAutoSize(true);
 
-$filename = "CSB_PROCUREMENT-PENDIENTES-". date("Y-m-d") . ".xlsx";
+$filename = "CSB_PROCUREMENT-HISTORICOS-". date("Y-m-d") . ".xlsx";
 
  header('Content-Type: application/vnd.ms-excel');
  header('Content-Disposition: attachment;filename='.$filename);
