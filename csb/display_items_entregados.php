@@ -27,8 +27,8 @@
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">ID</div>
-		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Buque<?php if($fecha_orden==1) {echo "<img src='images/arrow_down.png' style='height:12px'>";}?></a></div>
-		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=2">Descripcion<?php if($fecha_orden==2) {echo "<img src='images/arrow_down.png' style='height:12px'>";}?></a></div>
+		<div class="cell">Buque</div>
+		<div class="cell">Descripcion</div>
 		<div class="cell">Status</div>
 		<div class="cell">Status Fecha</div>
 		<div class="textcell">Status Detalle</div>

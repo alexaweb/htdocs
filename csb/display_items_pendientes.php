@@ -53,7 +53,6 @@
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=8">Status Item</a></div>
 		<div class="cell">Status Fecha</div>
 		<div class="textcell">Status Detalle</div>
-		<div class="cell">Status Docs</div>
 		<div class="cell">Status Docs Fecha</div>
 		<div class="textcell">Status Docs Detalle</div>
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=2">Proveedor</a></div>
@@ -85,7 +84,6 @@
 			<div class="cell"><a class="row" href="display_status_item.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>"><?=$row['item_status']?></a></div>
 			<div class="cell"><?=$row['si_fecha']?></div>
 			<div class="textcell"><?=$row['si_status']?></div>
-			<div class="cell"><?=$row['sd_status']?></div>
 			<div class="cell"><?=$row['sd_fecha']?></div>
 			<div class="textcell"><?=$row['sd_status']?></div>
 			<div class="cell"><?=$row['item_proveedor']?></div>
