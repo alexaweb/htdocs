@@ -81,10 +81,10 @@
 			<?=$row['item_container']?>&item_carrier=<?=$row['item_carrier']?>&item_status=<?=$row['item_status']?>"><?=$row['item_id']?></a></div>
 			<div class="cell"><?=$row['item_buque']?></div>
 			<div class="textcell"><?=$row['item_descripcion']?></div>
-			<div class="cell"><a class="row" href="display_status_item.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>"><?=$row['item_status']?></a></div>
-			<div class="cell"><?=$row['si_fecha']?></div>
+			<div class="cell"><?=$row['item_status']?></div>
+			<div class="cell"><a href="display_status_item.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>">S</a>&nbsp;<?=$row['si_fecha']?></div>
 			<div class="textcell"><?=$row['si_status']?></div>
-			<div class="cell"><?=$row['sd_fecha']?></div>
+			<div class="cell"><a href="display_status_docs.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>">D</a>&nbsp;<?=$row['sd_fecha']?></div>
 			<div class="textcell"><?=$row['sd_status']?></div>
 			<div class="cell"><?=$row['item_proveedor']?></div>
 			<div class="cell"><?=$row['item_cotizacion']?></div>
