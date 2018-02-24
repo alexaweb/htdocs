@@ -1,6 +1,6 @@
 <?php
 
-	$current=41;
+	$current=42;
 	//$dbfile = "indicadoresDB.php";
 	//$menufile = "indicadoresmenu.php";
         //require_once ('/var/www/includes/common.php');
