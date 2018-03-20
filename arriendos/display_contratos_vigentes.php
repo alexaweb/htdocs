@@ -67,6 +67,7 @@
 		<div class="cell">Tipo</div>
 		<div class="cell">[CLP/mes]</div>
 		<div class="cell">[UF/mes]</div>
+                <div class="cell">[UF/m2]</div>
 		<div class="cell">Dia de Pago</div>
 		<div class="cell"><a href="display_contratos?p_orden=2">f. Aviso<?php if($p_orden==2) {echo "<img src='images/arrow_down.png' style='height:12px'>";}?></a></div>
 		<div class="cell"><a href="display_contratos?p_orden=3">f. Termino<?php if($p_orden==3) {echo "<img src='images/arrow_down.png' style='height:12px'>";}?></a></div>
@@ -80,6 +81,7 @@
 			<div class="cell"><?=($row['co_tipo']==1?"EE":($row['co_tipo']==2?"arriendo CLP":"arriendo"));?></div>
 			<div class="numbercell">$ <?=number_format($row['co_monto_clp'],0);?></div>
 			<div class="numbercell"><?=number_format($row['co_monto_uf'],2);?></div>
+                        <div class="numbercell"><?=($row['co_tipo']==1?"n/a":($row['co_tipo']==2?number_format(($row['co_monto_clp']-$row['pr_num_parking']*94500)/$row['pr_m2'],2):number_format(($row['co_monto_uf']-$row['pr_num_parking']*3.5)/$row['pr_m2'],2)));?></div>
 			<div class="cell"><?=$row['co_dia_de_pago'];?></div>
 			<div class="cell"><?=$row['co_fecha_aviso'];?></div>
 			<div class="cell"><?=$row['co_fecha_termino'];?></div>
