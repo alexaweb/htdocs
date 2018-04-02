@@ -119,6 +119,9 @@ Saldos negativos son a favor de <?=$entidad_nombre?><br><br><br>
             <option value="2014" <?php if($ano==2014){ print ' selected'; }?>>2014</option>
             <option value="2015" <?php if($ano==2015){ print ' selected'; }?>>2015</option>
             <option value="2016" <?php if($ano==2016){ print ' selected'; }?>>2016</option>
+            <option value="2017" <?php if($ano==2016){ print ' selected'; }?>>2016</option>
+            <option value="2018" <?php if($ano==2016){ print ' selected'; }?>>2016</option>
+            <option value="2019" <?php if($ano==2016){ print ' selected'; }?>>2016</option>
     </select><br />
       Cuenta Corriente: <?=$entidad_codigo;?>
 		 <input type="hidden" name="cc_id" value="<?=$cc_id;?>"> 
