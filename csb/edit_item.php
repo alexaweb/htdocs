@@ -51,14 +51,14 @@ Agregar Información:
 	Container: <input type="text" name="item_container" value="<?php echo $item_container?>"><br>
 	Carrier: <input type="text" name="item_carrier" value="<?php echo $item_carrier?>"><br>
 	Status: <input type="text" name="item_status" value="<?php echo $item_status?>"><br>
-  <input type="hidden" name="item_id" value="<?=$item_id?>"><br>
+  <input type="hidden" name="item_id" value="<?=$item_id?>">
   1: normal <br>
 <div class="row alert">2: alert</div>
 <div class="row warning">3: warning </div>
 <div class="row sea">4: @ sea</div>
 <div class="row cicarelli">5: @ cicarelli</div>
 <div class="row puq">6: @ puq</style></div>
-
+<br>
   <button class="button submit" type="submit" value="Submit">Submit</button>
 </form>
 

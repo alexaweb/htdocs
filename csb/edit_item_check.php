@@ -82,18 +82,19 @@ $item_origen = $_POST['item_origen'];
 	</div>
 	<div class="row">
 		<div class="cell formtext">Status:</div><div><input type="hidden" name="item_status" value="<?=$item_status?>" /><?=$item_status?> <br>
-                    1: normal <br>
-<div class="row alert">2: alert</div>
-<div class="row warning">3: warning </div>
-<div class="row sea">4: @ sea</div>
-<div class="row cicarelli">5: @ cicarelli</div>
-<div class="row puq">6: @ puq</style></div>
+        
 
 
 	<div class="row"><div class="cell">
      <button class="button back" type="button" onclick="history.back();">BACK</button></div>
     <div><button class="button submit" type="submit" value="Submit">OK</button>
 	</div></div></div></div>
+                        1: normal <br>
+<div class="row alert">2: alert</div>
+<div class="row warning">3: warning </div>
+<div class="row sea">4: @ sea</div>
+<div class="row cicarelli">5: @ cicarelli</div>
+<div class="row puq">6: @ puq</style></div>
 
 	</form>
 <?php require_once($path_include."/cmifooter.php");
