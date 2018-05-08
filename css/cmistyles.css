@@ -178,6 +178,10 @@ h6 {
         display: table-row;
     background: #ffa64d;
 }
+.row:nth-of-type(odd).sea{
+        display: table-row;
+    background: #1E90FF;
+}
 
 .cell{
     width: 100px;
@@ -248,5 +252,22 @@ h6 {
     background: #ffa64d;
     color: white;
 }
+
+.row.sea {
+    background: #6495ED;
+    color: white;
+}
+
+
+.row.cicarelli {
+    background: #F5DEB3;
+    color: #808080;
+}
+
+.row.puq {
+    background: #D2B48C;
+    color: #808080;
+}
+
 </style>
     

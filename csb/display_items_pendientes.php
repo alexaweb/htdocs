@@ -70,6 +70,12 @@
 				echo '<div class="row alert">';
 			} else if ($row['item_status']==2) {
 				echo '<div class="row warning">';
+			} else if ($row['item_status']==4) {
+				echo '<div class="row sea">';
+			} else if ($row['item_status']==5) {
+				echo '<div class="row cicarelli">';
+			} else if ($row['item_status']==6 ) {
+				echo '<div class="row puq">';
 			} else{
 				echo '<div class="row">';
 			}
@@ -91,13 +97,18 @@
 			<div class="cell"><?=$row['item_factura']?></div>
 			<div class="cell"><?=$row['item_fecha_rfq']?></div>
 			<div class="cell"><?=$row['item_container']?></div>
-			<div class="cell"><?=$row['item_bl_awb']?></div>
+                        <div class="cell"><a href="https://www.hapag-lloyd.com/en/online-business/tracing/tracing-by-booking.html?blno=<?=$row['item_bl_awb']?>"><?=$row['item_bl_awb']?></a></div>
 			<div class="cell"><?=$row['item_carrier']?></div>
 			<div class="cell"><?=$row['item_origen']?></div>
 		</div>
     <?php endforeach ?>
 </div>
-
+1: normal <br>
+<div class="row alert">2: alert</div>
+<div class="row warning">3: warning </div>
+<div class="row sea">4: @ sea</div>
+<div class="row cicarelli">5: @ cicarelli</div>
+<div class="row puq">6: @ puq</style></div>
 
 <?php require_once($path_include."/cmifooter.php");
 
