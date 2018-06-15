@@ -6,6 +6,10 @@
         $p_orden = $_GET['p_orden'];
         if(empty($p_orden))
         {
+            $p_orden = 8;
+        }
+        if(empty($p_orden))
+        {
             
             try
             {
