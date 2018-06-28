@@ -28,10 +28,6 @@
 		{
 			$item_fecha_rfq=$fecha;
 		}
-        if(empty($item_thc))
-		{
-			$item_thc="NULL";
-		}
 	if(empty($item_status))
 		{
 			$item_status=1;
