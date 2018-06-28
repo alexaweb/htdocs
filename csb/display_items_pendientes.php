@@ -55,7 +55,8 @@
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=1">Buque</a></div>
 		<div class="cell">Descripcion</div>
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=8">Status Item</a></div>
-		<div class="cell">Status Fecha</div>
+		<div class="cell">ETA</div>
+                <div class="cell">Status Fecha</div>
 		<div class="textcell">Status Detalle</div>
 		<div class="cell">Status Docs Fecha</div>
 		<div class="textcell">Status Docs Detalle</div>
@@ -63,6 +64,7 @@
 		<div class="cell">Cotizacion</div>
 		<div class="cell">Factura</div>
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=7">Fecha RFQ</a></div>
+                <div class="cell">THC</div>
                 <div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=3">Container</a></div>
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=4">BL o AWB</a></div>
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=5">Carrier</a></div>
@@ -88,10 +90,11 @@
 			<div class="cell"><a class="row" href="edit_item.php?item_id=<?=$row['item_id']?>&item_buque=<?=$row['item_buque']?>&item_descripcion=
 			<?=$row['item_descripcion']?>&item_origen=<?=$row['item_origen']?>&item_proveedor=<?=$row['item_proveedor']?>&item_cotizacion=<?=$row['item_cotizacion']?>&item_factura=
 			<?=$row['item_factura']?>&item_fecha_rfq=<?=$row['item_fecha_rfq']?>&item_bl_awb=<?=$row['item_bl_awb']?>&item_container=
-			<?=$row['item_container']?>&item_carrier=<?=$row['item_carrier']?>&item_status=<?=$row['item_status']?>"><?=$row['item_id']?></a></div>
+			<?=$row['item_container']?>&item_carrier=<?=$row['item_carrier']?>&item_status=<?=$row['item_status']?>&item_eta=<?=$row['item_eta']?>&item_thc=<?=$row['item_thc']?>"><?=$row['item_id']?></a></div>
 			<div class="cell"><?=$row['item_buque']?></div>
 			<div class="textcell"><?=$row['item_descripcion']?></div>
 			<div class="cell"><?=$row['item_status']?></div>
+                        <div class="cell"><?=$row['item_eta']?></div>
 			<div class="cell"><a href="display_status_item.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>">S</a>&nbsp;<?=$row['si_fecha']?></div>
 			<div class="textcell"><?=$row['si_status']?></div>
 			<div class="cell"><a href="display_status_docs.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>">D</a>&nbsp;<?=$row['sd_fecha']?></div>
@@ -100,6 +103,7 @@
 			<div class="cell"><?=$row['item_cotizacion']?></div>
 			<div class="cell"><?=$row['item_factura']?></div>
 			<div class="cell"><?=$row['item_fecha_rfq']?></div>
+                        <div class="cell"><?=$row['item_thc']?></div>
 			<div class="cell"><?=$row['item_container']?></div>
                         <div class="cell"><a href="https://www.hapag-lloyd.com/en/online-business/tracing/tracing-by-booking.html?blno=<?=$row['item_bl_awb']?>"><?=$row['item_bl_awb']?></a></div>
 			<div class="cell"><?=$row['item_carrier']?></div>

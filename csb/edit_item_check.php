@@ -29,6 +29,8 @@ $item_origen = $_POST['item_origen'];
 	$item_container = $_POST['item_container'];
 	$item_carrier = $_POST['item_carrier'];
 	$item_status = $_POST['item_status'];
+        $item_eta = $_POST['item_eta'];
+        $item_thc = $_POST['item_thc'];
 	
        
     }
@@ -71,6 +73,9 @@ $item_origen = $_POST['item_origen'];
 	<div class="row">
 		<div class="cell formtext">Fecha RFQ:</div><div><input type="hidden" name="item_fecha_rfq" value="<?=$item_fecha_rfq?>" /><?=$item_fecha_rfq?></div>
 	</div>
+          <div class="row">
+		<div class="cell formtext">THC:</div><div><input type="hidden" name="item_thc" value="<?=$item_thc?>" /><?=$item_thc?></div>
+	</div>
 	<div class="row">
 		<div class="cell formtext"># BL o AWB:</div><div><input type="hidden" name="item_bl_awb" value="<?=$item_bl_awb?>" /><?=$item_bl_awb?></div>
 	</div>
@@ -79,6 +84,9 @@ $item_origen = $_POST['item_origen'];
 	</div>
 	<div class="row">
 		<div class="cell formtext">Carrier:</div><div><input type="hidden" name="item_carrier" value="<?=$item_carrier?>" /><?=$item_carrier?></div>
+	</div>
+        <div class="row">
+		<div class="cell formtext">ETA:</div><div><input type="hidden" name="item_eta" value="<?=$item_eta?>" /><?=$item_eta?></div>
 	</div>
 	<div class="row">
 		<div class="cell formtext">Status:</div><div><input type="hidden" name="item_status" value="<?=$item_status?>" /><?=$item_status?> <br>
