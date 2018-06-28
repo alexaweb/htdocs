@@ -29,7 +29,6 @@ $item_origen = $_POST['item_origen'];
 	$item_container = $_POST['item_container'];
 	$item_carrier = $_POST['item_carrier'];
 	$item_status = $_POST['item_status'];
-        $item_eta = $_POST['item_eta'];
         $item_thc = $_POST['item_thc'];
 	
        
@@ -84,9 +83,6 @@ $item_origen = $_POST['item_origen'];
 	</div>
 	<div class="row">
 		<div class="cell formtext">Carrier:</div><div><input type="hidden" name="item_carrier" value="<?=$item_carrier?>" /><?=$item_carrier?></div>
-	</div>
-        <div class="row">
-		<div class="cell formtext">ETA:</div><div><input type="hidden" name="item_eta" value="<?=$item_eta?>" /><?=$item_eta?></div>
 	</div>
 	<div class="row">
 		<div class="cell formtext">Status:</div><div><input type="hidden" name="item_status" value="<?=$item_status?>" /><?=$item_status?> <br>

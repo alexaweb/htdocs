@@ -21,13 +21,16 @@
 	$item_container = $_GET['item_container'];
 	$item_carrier = $_GET['item_carrier'];
 	$item_status = $_GET['item_status'];
-        $item_eta = $_GET['item_eta'];
         $item_thc = $_GET['item_thc'];
 	}
 	
 	if(empty($item_fecha_rfq))
 		{
 			$item_fecha_rfq=$fecha;
+		}
+        if(empty($item_thc))
+		{
+			$item_thc=null;
 		}
 	if(empty($item_status))
 		{
@@ -53,7 +56,6 @@ Agregar Información:
 	#BL o AWB: <input type="text" name="item_bl_awb" value="<?php echo $item_bl_awb?>"><br>
 	Container: <input type="text" name="item_container" value="<?php echo $item_container?>"><br>
 	Carrier: <input type="text" name="item_carrier" value="<?php echo $item_carrier?>"><br>
-        ETA: <input type="text" name="item_eta" value="<?php echo $item_eta?>"><br>
 	Status: <input type="text" name="item_status" value="<?php echo $item_status?>"><br>
   <input type="hidden" name="item_id" value="<?=$item_id?>">
   1: normal <br>

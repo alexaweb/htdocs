@@ -22,7 +22,6 @@
 		$item_container = $_POST['item_container'];
 		$item_carrier = $_POST['item_carrier'];
 		$item_status = $_POST['item_status'];
-                $item_eta = $_POST['item_eta'];
                 $item_thc = $_POST['item_thc'];
         if(empty($item_id))
         {
@@ -32,7 +31,7 @@
        
         try
         {
-            $sql = "call proc_update_item('{$item_id}','{$item_buque}','{$item_descripcion}','{$item_origen}','{$item_proveedor}','{$item_cotizacion}','{$item_factura}','{$item_fecha_rfq}','{$item_bl_awb}','{$item_container}','{$item_carrier}','{$item_status}','{$item_eta}','{$item_thc}');";
+            $sql = "call proc_update_item('{$item_id}','{$item_buque}','{$item_descripcion}','{$item_origen}','{$item_proveedor}','{$item_cotizacion}','{$item_factura}','{$item_fecha_rfq}','{$item_bl_awb}','{$item_container}','{$item_carrier}','{$item_status}','{$item_thc}');";
             //echo $sql;
 			//die;
             $stmt = $db->prepare($sql);
