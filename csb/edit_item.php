@@ -30,7 +30,7 @@
 		}
         if(empty($item_thc))
 		{
-			$item_thc=null;
+			$item_thc="NULL";
 		}
 	if(empty($item_status))
 		{

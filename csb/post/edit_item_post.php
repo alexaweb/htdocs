@@ -27,7 +27,10 @@
         {
            $item_id=0;
         }
-       
+        if(empty($item_thc))
+        {
+            $item_thc = "1990-01-01";
+        }
        
         try
         {
