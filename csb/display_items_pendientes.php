@@ -90,7 +90,13 @@
                         $url_carrier = "https://www.hapag-lloyd.com/en/online-business/tracing/tracing-by-booking.html?blno=";
                         } else if ($row['item_carrier']=="Hamburg Sud") {
                         $url_carrier = "https://www.hamburgsud-line.com/liner/en/liner_services/ecommerce/track_trace/index.html?query=";
+                    } else if ($row['item_carrier']=="DHL") {
+                        $url_carrier = "http://www.dhl.com/en/express/tracking.html?brand=DHL&AWB=";
+                    } else if ($row['item_carrier']=="FEDEX") {
+                        $url_carrier = "https://www.fedex.com/apps/fedextrack/?action=track&trackingnumber=";
                     }
+                    
+                    
                     ?>
     
 			<div class="cell"><a class="row" href="edit_item.php?item_id=<?=$row['item_id']?>&item_buque=<?=$row['item_buque']?>&item_descripcion=
@@ -110,7 +116,7 @@
 			<div class="cell"><?=$row['item_fecha_rfq']?></div>
                         <div class="cell"><?=$row['item_thc']?></div>
 			<div class="cell"><?=$row['item_container']?></div>
-                        <div class="cell"><a href="<?=$url_carrier?><?=$row['item_bl_awb']?>"><?=$row['item_bl_awb']?></a></div>
+                        <div class="cell"><a target="_blank" href="<?=$url_carrier?><?=$row['item_bl_awb']?>"><?=$row['item_bl_awb']?></a></div>
 			<div class="cell"><?=$row['item_carrier']?></div>
 			<div class="cell"><?=$row['item_origen']?></div>
 		</div>
