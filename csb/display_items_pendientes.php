@@ -94,6 +94,8 @@
                         $url_carrier = "http://www.dhl.com/en/express/tracking.html?brand=DHL&AWB=";
                     } else if ($row['item_carrier']=="FEDEX") {
                         $url_carrier = "https://www.fedex.com/apps/fedextrack/?action=track&trackingnumber=";
+                    } else if ($row['item_carrier']=="TNT") {
+                        $url_carrier = "https://www.tnt.com/express/es_cl/site/herramientas-envio/seguimiento.html?respCountry=cl&respLang=es&cons=";
                     }
                     
                     
