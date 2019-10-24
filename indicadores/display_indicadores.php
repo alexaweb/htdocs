@@ -1,13 +1,15 @@
 <?php
 
 	$current=41;
+	$page_category = "indicadores";
+	$page_name = "todos";
 	//$dbfile = "indicadoresDB.php";
 	//$menufile = "indicadoresmenu.php";
         //require_once ('/var/www/includes/common.php');
 	//require_once('/var/www/includes/cmiheader.php');
         require_once('../../includes/indicadores_common.php');
-    
-    
+
+
     // DEFINE LA FECHA PARA BUSQUEDA DE INDICADORES
     //date_default_timezone_set('America/Santiago');
     //$fecha = "2016-07-17";
@@ -20,13 +22,13 @@
     $row = $stmt->fetch();
     $valor_uf = $row['valor'];*/
     //echo "El valor de la UF el día de hoy $fecha es: $valor_uf<br><br>";
-    
+
 
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
 	$ano = $_GET['ano'];
 	$mes = $_GET['mes'];
-        
+
     if(empty($_GET['ano']))
     {
             $ano = date("Y");
@@ -37,8 +39,8 @@
 			$mes = date("m");
             //die("Ingresar mes.");
     }
-	
-    
+
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -52,20 +54,20 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
+
 
 
 ?>
 
-		
-				
+
+
 <h2>Indicadores <?php echo $cc_entidad_codigo_b;?></h2>
-		
+
 	<form action="display_indicadores.php">
 		<input type="text" name="ano" value="<?=$ano;?>">
 		<input type="text" name="mes" value="<?=$mes;?>">
 		<button class="button submit" type="submit" value="Submit">submit</button>
-	</form>		
+	</form>
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">Fecha</div>
@@ -84,9 +86,7 @@
 		</div>
     <?php endforeach ?>
 </div>
-				
+
 
 
 <?php require_once($path_include."/cmifooter.php");
-
-

@@ -1,6 +1,8 @@
 <?php
 	$tr_cc_id = $_GET['tr_cc_id'];
 	$current="10".$tr_cc_id;
+	$page_category = "cuentas corrientes";
+	$page_name = "cartolas";
 	require_once('../../includes/cmi_common.php');
 
 
@@ -86,23 +88,15 @@
         }
 
 
-
+require_once('includes/display_cartola_navigation.inc');
 ?>
 
 
-<h2><?php echo $cc_entidad_codigo_b;?>: Cartola de Transacciones </h2>
-<a href="display_cartola_transacciones.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Transacciones</a>&nbsp;&nbsp;
-<a href="display_cartola_aplicaciones.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Aplicaciones</a>&nbsp;&nbsp;
-<a href="display_detalle_cc.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Interés y Saldos</a>&nbsp;&nbsp;
-<a href="display_cartola_interes.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Interés</a>&nbsp;&nbsp;
-
-<br><br>
-<a href="export/export_interes_xls.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=<?=$fecha_orden?>">EXPORT XLS</a>
 <div class="table">
 	<div class="rowheader">
-		<div class="textcell">Año</div>
-		<div class="cell">Interés (CLP)</div>
-		<div class="cell">Interés (UF)</div>
+		<div class="cell">Año</div>
+		<div class="rightcell">Interés (CLP)</div>
+		<div class="rightcell">Interés (UF)</div>
 	</div>
     <?php foreach ($data_tr as $row):
 		if ($row['tr_tipo_transaccion']==0)
@@ -115,8 +109,10 @@
 		<?php }?>
     <?php endforeach ?>
 </div>
-
-
+<div>
+	<h2>Download links:</h2>
+<a href="export/export_interes_xls.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=<?=$fecha_orden?>"><img src="/audit/images/xls-icon.png"></a>
+</div>
 
 
 <?php require_once($path_include."/cmifooter.php");

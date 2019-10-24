@@ -1,8 +1,10 @@
 <?php
 	//$tr_cc_id = $_GET['tr_cc_id'];
 	$current="500";
+	$page_category = "abastecimiento CSB";
+	$page_name = "items entregados";
 	require_once('../../includes/csb_common.php');
-	
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -17,13 +19,10 @@
         {
            die("Failed to run query: " . $ex->getMessage());
         }
-		
-		
+
+
 ?>
 
-
-<h2>Status Items Entregados</h2>
-<a href="export/export_items_pendientes_xls.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=<?=$fecha_orden?>">EXPORT XLS</a>
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">ID</div>
@@ -66,6 +65,9 @@
     <?php endforeach ?>
 </div>
 
+<div>
+	<h2>Download links:</h2>
+<a href="export/export_items_pendientes_xls.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=<?=$fecha_orden?>"><img src="/audit/images/xls-icon.png"></a>
+</div>
 
 <?php require_once($path_include."/cmifooter.php");
-

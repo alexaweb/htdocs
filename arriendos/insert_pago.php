@@ -1,14 +1,16 @@
 <?php
-	$current=32;
+	$current=332;
+	$page_category = "arriendos";
+	$page_name = "ingresar pago";
 	require_once('../../includes/arriendos_common.php');
-    
-    
+
+
     $fecha_valor = date("Y-m-d");
     $fecha = date("Y-m-d");
 	//$co_id = $_GET('co_id');
 	$co_id = $_GET['co_id'];
   //por defecto seleccionamos mes pasado
-			
+
 		$ano =  date("Y", strtotime( '-1 month' ) );
 		$mes =  date("m", strtotime( '-1 month' ) );
     $sql = "select c.co_id, a.ar_id, a.ar_nombre, p.pr_codigo, c.co_tipo from contrato c join arrendatario a on c.ar_id = a.ar_id join propiedad p on c.pr_id = p.pr_id order by p.pr_codigo asc;";
@@ -18,8 +20,8 @@
 
 ?>
 
-		
-				
+
+
 <h2>Ingresar pago</h2>
 
 <form action="insert_pago_check.php" method="post">
@@ -56,9 +58,9 @@
 	</div>
 	<div class="row">
 		<div class="cell formtext">Notas: </div><div class="cell"><input type="text" name="notas" value="" /></div>
-	</div>	
+	</div>
 	<div class="row"><div class="cell formtext">
-    </div><div><button class="button submit" type="submit" value="Submit">OK</button>
+	</div><div><button class="button-submit" type="submit" value="Submit">OK</button>
 	</div></div></div></div>
 	<!--<input type="hidden" name="co_id" value="<? //echo $co_id;?>">-->
 	</form>

@@ -1,0 +1,311 @@
+/*body{
+  font: 15px/normal Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;
+}
+*/
+
+
+/*
+ul{
+  margin:0;
+  padding:0;
+}*/
+
+/*
+header{
+  background:#35424a;
+  color:#ffffff;
+  padding-top:30px;
+  min-height:3rem;
+  border-bottom:#69c 3px solid;
+}
+
+header a{
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:18px;
+  color:#ffffff;
+}
+*/
+
+/*
+header a:hover{
+  color:red;
+}
+
+header nav ul {
+  background: transparent;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+}
+*/
+
+/*
+header nav ul li{
+  display:inline;
+  display: block;
+  float:left;
+  padding: 1rem 1rem 1rem 1rem;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  margin: 0;
+}
+*/
+
+/*
+header nav .navigation .btn{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    margin: 2px 0;
+
+
+  background-color: transparent;
+}*/
+
+/*container completo de dropdown menu*/
+/* el padding es exterior a los menu options en si mismas*/
+/*.dropdown {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    margin: 2px 0;
+    padding: 0;
+  background-color: #ffffff;
+  width: 100%;
+    visibility: hidden;
+    position: absolute
+
+
+}
+*/
+
+/*
+.dropdown a{
+  color:black;
+}
+
+.dropdown li{
+    margin-top: 0px;
+    padding: 0;
+}
+*/
+
+
+/*color de botón con hover*/
+/*
+header nav ul li .btn:hover {
+  background: #69c;
+  color:blue;
+  cursor: pointer;
+  border: solid 1px transparent;
+  border-radius: 4px;
+}
+*/
+
+/*the dropdown portion of the menu
+header nav ul li ul {
+    background: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 2rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+    width: 100%;
+
+}*/
+
+/*the dropdown portion of the menu*/
+/*
+header nav ul li:hover > ul,
+header nav ul li:focus-within > ul,
+header nav ul li ul:hover,
+header nav .dropdown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  width: 100%;
+}
+*/
+
+/*the buttons within the dropdown*/
+/*header nav ul li ul li {
+  clear: both;
+}
+
+header #branding{
+  float:left;
+}
+
+header #branding h1{
+  margin:0;
+}
+
+header nav{
+  float:right;
+  margin-top:0px;
+}
+
+header .highlight, header .current a{
+  color:blue;
+  font-weight:bold;
+}
+
+*/
+
+
+
+
+
+
+
+
+$color-base:#fff;
+$color-text:#222;
+$color-accent: desaturate(navy,80%);
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  background:$color-accent;
+  color:$color-text;
+  line-height:normal;
+  font-size:16px;
+  font-family:sans-serif;
+}
+
+a,a:hover{color:$color-accent; text-decoration : none; font-weight:600;}
+
+nav{
+  position:fixed;
+  left:0;right:0;top:0;
+  height:50px;
+  background:$color-base;
+  box-shadow:0 0px 9px 4px rgba(#000, .1), 0 -5px 2px 2px rgba(#000, .1);
+  z-index:1000;
+  min-width:580px;
+
+  .logo{
+    position:relative;
+    float:left;
+    height:50px;
+    line-height:50px;
+    padding:0 15px;
+    font-size:22px;
+    font-weight:900;
+    text-transform:uppercase;
+    span{
+      display:inline-block;
+      position:relative;
+      top:-8px;
+      font-size:13pt;
+    }
+
+    &:hover{
+      background:lighten($color-accent,40);
+    }
+  }
+
+  .links{
+    float:right;
+    margin-right: 30px;
+    position:relative;
+
+    li{
+      float:left;
+      list-style:none;
+      position:relative;
+      margin:10px;
+      display:inline-block;
+
+      &>a{
+        position:relative;
+        display:inline-block;
+        padding:0 10px;
+        line-height:30px;
+        height:30px;
+
+        &:hover{
+          color:$color-base;
+          background:$color-accent;
+          border-radius:2px;
+        }
+
+        &[class^="trigger-"]{padding-right:40px;}
+
+        .arrow{
+          position:absolute;
+          width:10px;height:10px;
+          top:35%;
+          text-align:center;
+          right:10px;
+          border-width: 5px 5px 0 5px;
+          border-style:solid;
+          border-color: rgba(#000, .3) transparent;
+
+          &:after{
+            content:"";
+            border-left:1px solid rgba(#000,.15);
+            top:-10px;left:-15px;
+            position:absolute;
+            height:15px;
+          }
+
+        }
+
+      }
+
+      ul{
+          position:absolute;
+          left:0;
+          //top:40px;
+          margin:0;
+          background:$color-base;
+          border-radius:2px;
+          box-shadow:0 0 5px rgba(#000, .15);
+          display:none;
+
+          >li{
+            clear:both;
+            list-style:none;
+            display:block;
+            padding:0 10px;
+            margin:0;
+            width:100%;
+
+            &:hover{
+              background:lighten($color-accent,40);
+              >a{
+                background:lighten($color-accent,40);
+                color:$color-base;
+              }
+            }
+          }
+
+        }
+
+      &:hover {
+          > .drop{
+            display:block;
+            animation:fadeInRight .3s ease;
+            -webkit-animation:fadeInRight .3s ease;
+        }
+      }
+
+    }
+  }
+
+}

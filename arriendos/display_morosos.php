@@ -1,27 +1,29 @@
 <?php
 
 	$current=323;
+	$page_category = "arriendos";
+	$page_name = "status morosidad";
 	require_once('../../includes/arriendos_common.php');
-    
-    
-    
-    
+
+
+
+
 
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
 	$p_orden = $_GET['p_orden'];
-        
+
     if(empty($p_orden))
     {
             $p_orden = 0;
 			//die("Ingresar ano.");
     }
-	
+
 		$fecha_hoy = date("Y-m-d");
     	try
         {
             $sql_uf = "call get_valor_uf('{$fecha_hoy}');";
-			
+
             $stmt_uf = $db->prepare($sql_uf);
             $result_uf = $stmt_uf->execute();
             $data_uf = $stmt_uf->fetch();
@@ -33,7 +35,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-                
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -48,16 +50,14 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
+
 $total_mora_uf = 0;
 $total_mora_clp = 0;
 ?>
 
-		
-				
-<h2>Propiedades / Contratos de Arriendo en Mora</h2>
-		
-	
+
+
+
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">f. Aviso</div>
@@ -65,13 +65,13 @@ $total_mora_clp = 0;
 		<div class="cell">Propiedad</div>
 		<div class="textcell">Arrendatario</div>
 		<div class="cell">[ $ o UF/mes ]</div>
-		
-		
-		
-		
-		<div class="cell">Cuotas Vencidas</div>
-		<div class="cell">Monto (UF)</div>
-		<div class="cell">Monto (CLP)</div>
+
+
+
+
+		<div class="rightcell">Cuotas Vencidas</div>
+		<div class="rightcell">Monto (UF)</div>
+		<div class="rightcell">Monto (CLP)</div>
 		<div class="cell">...</div>
 	</div>
     <?php foreach ($data as $row): ?>
@@ -79,7 +79,7 @@ $total_mora_clp = 0;
 		$co_id = $row['co_id'];
 		try
         {
-		   
+
             $sql_3 = "call proc_display_cuotas_vencidas($co_id);";
             $stmt_3 = $db->prepare($sql_3);
             $result_3 = $stmt_3->execute();
@@ -91,7 +91,7 @@ $total_mora_clp = 0;
             die("Failed to run query: " . $ex->getMessage());
         }
 		?>
-		
+
 		<?php if ($data_3['cantidad']>0){
 			echo '<div class="row alert">';
 		} else{
@@ -103,9 +103,9 @@ $total_mora_clp = 0;
 			<div class="cell"><?=$row['pr_codigo'];?></div>
 			<div class="textcell"><?=$row['ar_nombre'];?></div>
 			<div class="numbercell"><?=($row['co_tipo']==1?"EE":($row['co_tipo']==2?money_format('%.0n',$row['co_monto_clp']):number_format($row['co_monto_uf'],2)));?></div>
-		
-			
-			
+
+
+
 
 			<div class="numbercell"><?=$data_3['cantidad'];?></div>
 			<div class="numbercell">UF <?=number_format($data_3['monto_uf'],2);?></div>
@@ -120,7 +120,7 @@ $total_mora_clp = 0;
 					$total_mora_clp = $data_3['monto'] + $total_mora_clp;
 					$total_mora_uf = $data_3['monto_uf'] + $total_mora_uf;
 				}?></div>
-			<div class="cell"><a href="display_contrato.php?co_id=<?=$row['co_id']?>" class="button">detalle</a></div>
+			<div class="cell"><a href="display_contrato.php?co_id=<?=$row['co_id']?>" class="button-report">...</a></div>
 		</div>
 		<?
 			//$total_mora_uf = $data_3['monto_uf'] + $total_mora_uf;
@@ -138,6 +138,6 @@ $total_mora_clp = 0;
 		<div class="cell"></div>
 	</div>
 </div>
-		
+
 
 <?php require_once($path_include."/cmifooter.php");

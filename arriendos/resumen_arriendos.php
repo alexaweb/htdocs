@@ -1,18 +1,20 @@
 <?php
 
 	$current=322;
+	$page_category = "arriendos";
+	$page_name = "resumen flujo";
 	require_once('../../includes/arriendos_common.php');
-	
-    
-    
-    
+
+
+
+
 
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
 	$periodo = date("Ym");
-	
-    
-                
+
+
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -27,7 +29,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
+
 		try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -43,7 +45,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
+
 		try
 		{
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -64,10 +66,10 @@
 	$porcentaje_sinarrendar = $sinarrendar / $totales * 100;
 ?>
 
-		
-				
-<h2>Resumen Arriendos</h2>
-	
+
+
+
+
 <div class="table">
 	<div class="row">
 		<div class="leftcell">Propiedades para Arriendo:</div>
@@ -83,7 +85,7 @@
 	</div>
 </div>
 <br><br>
-	
+
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">Periodo</div>
@@ -108,9 +110,9 @@
 			<div class="numbercell"><?=number_format($cobro,2);?></div>
 			<div class="numbercell"><?=number_format($pago,2);?></div>
 			<div class="numbercell"><?=number_format($porcentaje*100)." %";?></div>
-			<div class="cell"><a href="resumen_periodo.php?periodo=<?=$row['periodo']?>" class="button">detalle</a></div>
+			<div class="cell"><a href="resumen_periodo.php?periodo=<?=$row['periodo']?>" class="button-report">...</a></div>
 		</div>
     <?php endforeach ?>
 </div>
-				
+
 <?php require_once($path_include."/cmifooter.php");

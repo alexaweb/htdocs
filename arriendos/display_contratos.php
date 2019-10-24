@@ -1,26 +1,28 @@
 <?php
 
 	$current=321;
+	$page_category = "arriendos";
+	$page_name = "contratos históricos";
 	require_once('../../includes/arriendos_common.php');
-    
-    
-    
-    
+
+
+
+
 
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
 	$p_orden = $_GET['p_orden'];
-        
+
     if(empty($p_orden))
     {
             $p_orden = 0;
 			//die("Ingresar ano.");
     }
-	
+
     /*
        // $tr_fecha = $_POST['tr_fecha'];
         $tr_cc_id = $_GET['tr_cc_id'];
-         
+
           //Obtengo el valor de la UF para desplegar antes de hacer cualquier cosa
         $sql = "select entidad_codigo_b, cc_spread,cc_fecha_inicio from cc where cc_id=$tr_cc_id";
         $stmt = $db->prepare($sql);
@@ -32,7 +34,7 @@
 
 		$fecha_orden = $_GET['fecha_orden'];
         */
-                
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -46,18 +48,13 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
+
 
 
 ?>
 
-		
-				
-<h2>Propiedades / Contratos de Arriendo</h2>
-<a href="display_contratos.php">Contratos (Histórico)</a>&nbsp;&nbsp;
-<a href="display_contratos_vigentes.php">Contratos Vigentes</a>&nbsp;&nbsp;
-<br><br>
-	
+
+
 <div class="table">
 	<div class="rowheader">
 		<div class="cell"><a href="/arriendos/display_contratos?p_orden=1">f. Inicio<?php if($p_orden==1) {echo "<img src='images/arrow_down.png' style='height:12px'>";}?></a></div>
@@ -82,10 +79,9 @@
 			<div class="cell"><?=$row['co_dia_de_pago'];?></div>
 			<div class="cell"><?=$row['co_fecha_aviso'];?></div>
 			<div class="cell"><?=$row['co_fecha_termino'];?></div>
-			<div class="cell"><a href="display_contrato.php?co_id=<?=$row['co_id']?>" class="button">detalle</a></div>
+			<div class="cell"><a href="display_contrato.php?co_id=<?=$row['co_id']?>" class="button-report">...</a></div>
 		</div>
     <?php endforeach ?>
 </div>
-				
-<?php require_once($path_include."/cmifooter.php");
 
+<?php require_once($path_include."/cmifooter.php");

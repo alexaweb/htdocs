@@ -1,25 +1,30 @@
 <?php
 
-	$current=41;
-	require_once('../../includes/arriendos_common.php');
-    
-    
-    
-    
+	$current=903;
+	$page_category = "arriendos";
+	$page_name = "detalle de propiedad" ;
+	// This if statement checks to determine whether the transaction has been submitted
+	// If it has, then the transaction insert code is run, otherwise the form is displayed
+$pr_id = $_GET['pr_id'];
 
-    // This if statement checks to determine whether the transaction has been submitted
-    // If it has, then the transaction insert code is run, otherwise the form is displayed
-	$pr_id = $_GET['pr_id'];
-	
-	if(empty($_GET['pr_id']))
-    {
-			die("Ingresar contrato.");
-    }
-	
+if(empty($_GET['pr_id']))
+	{
+		die("Ingresar propiedad.");
+	}
+$current="90"."$pr_id";
+
+	require_once('../../includes/arriendos_common.php');
+
+
+
+
+
+
+
     /*
        // $tr_fecha = $_POST['tr_fecha'];
         $tr_cc_id = $_GET['tr_cc_id'];
-         
+
           //Obtengo el valor de la UF para desplegar antes de hacer cualquier cosa
         $sql = "select entidad_codigo_b, cc_spread,cc_fecha_inicio from cc where cc_id=$tr_cc_id";
         $stmt = $db->prepare($sql);
@@ -31,7 +36,7 @@
 
 		$fecha_orden = $_GET['fecha_orden'];
         */
-                
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -46,7 +51,9 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
+
+	$page_name = 	$page_name ."x ".$data_co['pr_codigo'];
+
 		try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -61,7 +68,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
+
 		try
         {
             $sql_3 = "call proc_display_cuotas_vencidas_pr($pr_id);";
@@ -75,7 +82,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
+
 		try
         {
             $sql_4 = "call proc_display_proximo_vencimiento_pr($pr_id);";
@@ -89,18 +96,18 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
+
 
 
 ?>
 
-		
-				
-<h2>Detalle Propiedad</h2>
+
+
+
 <div class="table">
 	        <div class="row">
 			<div class="leftcell">Código</div>
-			<div class="textcell"><?=$data_co['pr_codigo'];?></div>
+			<div class="textcell" style="font-weight: bold;color:red;"><?=$data_co['pr_codigo'];?></div>
 		</div>
         <div class="row">
 			<div class="leftcell">Dirección</div>
@@ -117,7 +124,7 @@
 		<div class="row">
 			<div class="leftcell">Notas</div>
 			<div class="textcell"><?=$data_co['pr_notas'];?></div>
-		</div> 
+		</div>
 </div>
 <br>
 <div class="table">
@@ -150,7 +157,7 @@
 		<div class="textcell">Arrendatario</div>
 		<div class="cell">Monto (UF/mes)</div>
 		<div class="textcell">Notas</div>
-		<div class="cell">...</div>
+		<div class="cell">Ingresar Pago</div>
 
 	</div>
     <?php foreach ($data_pr as $row): ?>
@@ -159,11 +166,11 @@
 			<div class="textcell"><?=$row['ar_nombre'];?></div>
 			<div class="cell"><?=($row['tipo']==1?"Electricidad":number_format($row['co_monto_uf'],2))?></div>
 			<div class="textcell"><?=$row['co_inventario'];?></div>
-			<div class="textcell"><a href="insert_pago.php?co_id=<?=$row['co_id']?>" class="button">ingresar pago</a></div>
+			<div class="textcell"><a href="insert_pago.php?co_id=<?=$row['co_id']?>" class="button-report">...</a></div>
 		</div>
     <?php endforeach ?>
-	    
+
 </div>
-				
+
 
 	    <?php require_once($path_include."/cmifooter.php");

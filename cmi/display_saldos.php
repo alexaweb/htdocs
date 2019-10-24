@@ -1,6 +1,8 @@
 <?php
 
 	$current=21;
+	$page_category = "cuentas corrientes";
+	$page_name = "saldos";
 	require_once('../../includes/cmi_common.php');
 
 
@@ -41,7 +43,7 @@
 
 
 
-<h2>Saldos al <?php echo $fecha;?></h2>
+<h4>Saldos al <?php echo $fecha;?></h4>
 
 <div class="wrapper">
 	<div class="table">
@@ -69,8 +71,8 @@
 <br><br>
 <form action="display_saldos.php" method="get">
   Fecha: <input type="text" name="fecha" value="<?php echo $fecha?>"><br>
-    <button class="button" type="reset" value="Reset">Reset</button>
-  <button class="button submit" type="submit" value="Submit">Submit</button>
+    <button class="button-reset" type="reset" value="Reset">Reset</button>
+  <button class="button-submit" type="submit" value="Submit">Submit</button>
 </form>
 
 <?php require_once($path_include."/cmifooter.php");

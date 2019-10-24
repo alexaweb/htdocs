@@ -1,28 +1,30 @@
 <?php
 	$current=331;
+	$page_category = "arriendos";
+	$page_name = "ingresar cobro";
 	require_once('../../includes/arriendos_common.php');
-    
-   
-    
+
+
+
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
     if(empty($_GET)){
 	// This redirects the user back to the login page after they register
         header("Location: insert_cobro.php");
-        
+
         // Calling die or exit after performing a redirect using the header function
         // is critical.  The rest of your PHP script will continue to execute and
         // will be sent to the user if you do not die or exit.
         die("Redirecting to insert_cobro.php");
 	} else
     {
-        
+
         // Ensure that the user has entered a non-empty password
         if(empty($_GET['fecha']))
         {
             die("Ingresar fecha.");
         }
-        
+
 		if(empty($_GET['periodo']))
         {
             die("Ingresar Periodo.");
@@ -44,7 +46,7 @@
 		$tipo = $_GET['tipo'];
         $descripcion = $_GET['descripcion'];
 		$co_id = $_GET['co_id'];
-		
+
 		//echo $co_id.'.'.$_GET['co_id'].'ww';
 		//echo $tipo . "afda";
 		if(empty($_GET['monto_uf']))
@@ -56,7 +58,7 @@
 			$valor_uf = $row['valor'];
 			$monto_uf = $monto / $valor_uf;
 		}
-		
+
 		if(empty($_GET['monto']))
 		{
 			$sql = "call arriendos.get_valor_uf('{$fecha}');";
@@ -66,7 +68,7 @@
 			$valor_uf = $row['valor'];
 			$monto = $monto_uf * $valor_uf;
 		}
-		
+
 		/*
 		$sql = "select cb_monto_uf, cb_fecha_vencimiento from cobro where co_id = $co_id and cb_periodo = '{$periodo}';";
 		//echo $sql;
@@ -82,13 +84,13 @@
 		$result = $stmt->execute();
 		$data = $stmt->fetch();
     }
-	
-	
+
+
 
 ?>
 
-		
-				
+
+
 <h2>Confirmar cobro</h2>
 
 <form action="post/insert_cobro_post.php" method="post">
@@ -117,14 +119,14 @@
 	<div class="row">
 		<div class="cell formtext">Descripción: </div><div class="cell"><input type="text" name="descripcion" value="<?=$descripcion;?>" /></div>
 	</div>
-	
+
 	<div class="row"><div class="cell">
-     <button class="button back" type="button" onclick="history.back();">BACK</button></div>
-    <div><button class="button submit" type="submit" value="Submit">OK</button>
+     <button class="button-back" type="button" onclick="history.back();">BACK</button></div>
+    <div><button class="button-submit" type="submit" value="Submit">OK</button>
 	</div></div></div></div>
 	<input type="hidden" name="co_id" value="<?=$co_id;?>">
 	</form>
-	
+
 </form>
 
 <?php require_once($path_include."/cmifooter.php");

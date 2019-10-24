@@ -1,5 +1,27 @@
 <?php
-	$current=22;
+
+	// This if statement checks to determine whether the transaction has been submitted
+	// If it has, then the transaction insert code is run, otherwise the form is displayed
+	if(empty($_GET))
+	{
+			echo "Favor indicar cuenta corriente y fecha en GET";
+			die;
+	}
+
+	if(empty($_GET['tr_cc_id']))
+	{
+					die("Ingresar CC_ID.");
+	}
+		if(empty($_GET['fecha_orden']))
+	{
+					die("Ingresar 'fecha_orden':<br> 1: ordenar por fecha_abono <br>2: ordenar por fecha_valor.");
+	}
+
+		 // $tr_fecha = $_POST['tr_fecha'];
+		$tr_cc_id = $_GET['tr_cc_id'];
+		$current="10".$tr_cc_id;
+	$page_category = "cuentas corrientes";
+	$page_name = "cartolas";
 	require_once('../../includes/cmi_common.php');
 
 
@@ -17,25 +39,7 @@
     //echo "El valor de la UF el día de hoy $fecha es: $valor_uf<br><br>";
 
 
-    // This if statement checks to determine whether the transaction has been submitted
-    // If it has, then the transaction insert code is run, otherwise the form is displayed
-    if(empty($_GET))
-    {
-        echo "Favor indicar cuenta corriente y fecha en GET";
-        die;
-    }
 
-    if(empty($_GET['tr_cc_id']))
-    {
-            die("Ingresar CC_ID.");
-    }
-	    if(empty($_GET['fecha_orden']))
-    {
-            die("Ingresar 'fecha_orden':<br> 1: ordenar por fecha_abono <br>2: ordenar por fecha_valor.");
-    }
-
-       // $tr_fecha = $_POST['tr_fecha'];
-        $tr_cc_id = $_GET['tr_cc_id'];
 
           //Obtengo el valor de la UF para desplegar antes de hacer cualquier cosa
         $sql = "select entidad_codigo_b, cc_spread,cc_fecha_inicio from cc where cc_id=$tr_cc_id";
@@ -95,23 +99,18 @@
             die("Failed to run query: " . $ex->getMessage());
         }
 
+require_once('includes/display_cartola_navigation.inc');
 ?>
 
 
-<h2><?php echo $cc_entidad_codigo_b;?>: Cartola de Interés y Saldos </h2>
-<a href="display_cartola_transacciones.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Transacciones</a>&nbsp;&nbsp;
-<a href="display_cartola_aplicaciones.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Aplicaciones</a>&nbsp;&nbsp;
-<a href="display_detalle_cc.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Interés y Saldos</a>&nbsp;&nbsp;
-<a href="display_cartola_interes.php?tr_cc_id=<?=$tr_cc_id?>&fecha_orden=1">Cartola Interés</a>&nbsp;&nbsp;
-<br><br><br>
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">Fecha</div>
 		<div class="cell">Días</div>
-		<div class="cell">Saldo Promedio (UF)</div>
-		<div class="cell">Interés Devengado (UF)</div>
-		<div class="cell">Interés Anual</div>
-		<div class="cell">...</div>
+		<div class="rightcell">Saldo Promedio (UF)</div>
+		<div class="rightcell">Interés Devengado (UF)</div>
+		<div class="rightcell">Interés Anual</div>
+		<div class="cell">Reporte</div>
 	</div>
     <?php foreach ($data3 as $row):?>
     <div class="row">
@@ -120,7 +119,7 @@
 			<div class="numbercell"><?=number_format($row['saldo_promedio_uf'],2,",",".")?></div>
 			<div class="numbercell"><?=number_format($row['interes_devengado_uf'],2,",",".")?></div>
 			<div class="numbercell"><?=number_format($row['tasa_anual_uf'],2)?> %</div>
-			<div class="cell"><a href="display_interes_devengado_cc_detalle.php?cc_id=<?=$tr_cc_id?>&ano=<?=$row['ano']?>&mes=<?=$row['mes']?>" class="button">reporte</a></div>
+			<div class="cell"><a href="display_interes_devengado_cc_detalle.php?cc_id=<?=$tr_cc_id?>&ano=<?=$row['ano']?>&mes=<?=$row['mes']?>" class="button-report">...</a></div>
 		</div>
     <?php endforeach ?>
 </div>

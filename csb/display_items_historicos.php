@@ -1,8 +1,10 @@
 <?php
 	//$tr_cc_id = $_GET['tr_cc_id'];
 	$current="510";
+	$page_category = "abastecimiento CSB";
+	$page_name = "items históricos";
 	require_once('../../includes/csb_common.php');
-	
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -17,13 +19,10 @@
         {
            die("Failed to run query: " . $ex->getMessage());
         }
-		
-		
+
+
 ?>
 
-
-<h2>Histórico de Items</h2>
-<a href="export/export_items_historicos_xls.php">EXPORT XLS</a>
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">ID</div>
@@ -65,7 +64,10 @@
 		</div>
     <?php endforeach ?>
 </div>
+<div>
+	<h2>Download links:</h2>
+<a href="export/export_items_historicos_xls.php"><img src="/audit/images/xls-icon.png"></a>
+</div>
 
 
 <?php require_once($path_include."/cmifooter.php");
-

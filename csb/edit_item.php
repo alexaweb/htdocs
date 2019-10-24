@@ -3,10 +3,12 @@
 
 
 	$current="511";
+	$page_category = "abastecimiento CSB";
+	$page_name = "nuevo item / modificar item";
 	require_once('../../includes/csb_common.php');
-	
+
 	$fecha = date("Y-m-d", strtotime( '-0 days' ) );
-	
+
 	if(!empty($_GET))
     {
 	$item_id = $_GET['item_id'];
@@ -23,7 +25,7 @@
 	$item_status = $_GET['item_status'];
         $item_thc = $_GET['item_thc'];
 	}
-	
+
 	if(empty($item_fecha_rfq))
 		{
 			$item_fecha_rfq=$fecha;
@@ -32,13 +34,11 @@
 		{
 			$item_status=1;
 		}
-    	
-		
+
+
 ?>
 
 
-<h2>Item <?php echo $item_descripcion;?></h2>
-<br>
 Agregar Información:
 <form action="edit_item_check.php" method="post">
   Buque: <input type="text" name="item_buque" value="<?php echo $item_buque?>"><br>
@@ -52,20 +52,20 @@ Agregar Información:
 	#BL o AWB: <input type="text" name="item_bl_awb" value="<?php echo $item_bl_awb?>"><br>
 	Container: <input type="text" name="item_container" value="<?php echo $item_container?>"><br>
 	Carrier: <input type="text" name="item_carrier" value="<?php echo $item_carrier?>"><br>
-	Status: <input type="text" name="item_status" value="<?php echo $item_status?>"><br>
+	<!--Status: <input type="text" name="item_status" value="<?php echo $item_status?>"><br>-->
+	<span style="display:inline">Status:
+	<input type="radio" name="item_status" value="1" <?php echo ($item_status==1) ?  "checked" : "" ;  ?>><p class="row"> 1: normal</p>  &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="item_status" value="2" <?php echo ($item_status==2) ?  "checked" : "" ;  ?>><p class="row warning">2: warning</p> &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="item_status" value="3" <?php echo ($item_status==3) ?  "checked" : "" ;  ?>><p class="row alert" >3: alert</p> &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="item_status" value="4" <?php echo ($item_status==4) ?  "checked" : "" ;  ?>><p class="row sea" >4: @ sea</p> &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="item_status" value="5" <?php echo ($item_status==5) ?  "checked" : "" ;  ?>><p class="row cicarelli">5: @ cicarelli</p> &nbsp;&nbsp;&nbsp;
+	<input type="radio" name="item_status" value="6" <?php echo ($item_status==6) ?  "checked" : "" ;  ?>><p class="row puq" >6: @ puq</p> &nbsp;&nbsp;&nbsp;
+</span><br><br>
   <input type="hidden" name="item_id" value="<?=$item_id?>">
-  1: normal <br>
-<div class="row warning">2: warning</div>
-<div class="row alert">3: alert </div>
-<div class="row sea">4: @ sea</div>
-<div class="row cicarelli">5: @ cicarelli</div>
-<div class="row puq">6: @ puq</style></div>
-<br>
-  <button class="button submit" type="submit" value="Submit">Submit</button>
+  <button class="button-submit" type="submit" value="Submit">Submit</button>
 </form>
 
 
 
 
 <?php require_once($path_include."/cmifooter.php");
-

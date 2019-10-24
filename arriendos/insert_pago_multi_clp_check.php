@@ -1,28 +1,30 @@
 <?php
 	$current=333;
+	$page_category = "arriendos";
+	$page_name = "ingresar pago electricidad (múltiple)";
 	require_once('../../includes/arriendos_common.php');
-    
-   
-    
+
+
+
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
     if(empty($_GET)){
 	// This redirects the user back to the login page after they register
         header("Location: insert_pago_multi_clp.php");
-        
+
         // Calling die or exit after performing a redirect using the header function
         // is critical.  The rest of your PHP script will continue to execute and
         // will be sent to the user if you do not die or exit.
         die("Redirecting to insert_pago_multi_clp.php");
 	} else
     {
-        
+
         // Ensure that the user has entered a non-empty password
         if(empty($_GET['fecha']))
         {
             die("Ingresar fecha.");
         }
-        
+
         if(empty($_GET['co_id']))
         {
             die("Ingresar contrato .");
@@ -39,7 +41,7 @@
         {
             die("Ingresar Periodo.");
         }
-		
+
 		//$ano = (int) date("Y", strtotime( '-1 month' ) );
 		$fecha = $_GET['fecha'];
         $monto = str_replace('$','',str_replace('.','',$_GET['monto']));
@@ -47,16 +49,16 @@
 		$tipo = $_GET['tipo'];
         $notas = $_GET['notas'];
 		$co_id = $_GET['co_id'];
-		
-		
-       
+
+
+
     }
-	
-	
+
+
 
 ?>
-		
-				
+
+
 <h2>Confirmar pago de Electricidad</h2>
 
 <form action="post/insert_pago_multi_clp_post.php" method="post">
@@ -86,13 +88,13 @@
 	<div class="row">
 		<div class="cell formtext">Notas: </div><div class="cell"><input type="notas" name="notas" value="<?=$notas;?>" /></div>
 	</div>
-	
+
 	<div class="row"><div class="cell">
-     <button class="button back" type="button" onclick="history.back();">BACK</button></div>
-    <div><button class="button submit" type="submit" value="Submit">OK</button>
+     <button class="button-back" type="button" onclick="history.back();">BACK</button></div>
+    <div><button class="button-submit" type="submit" value="Submit">OK</button>
 	</div></div></div></div>
-	
+
 	</form>
-	
+
 </form>
 <?php require_once($path_include."/cmifooter.php");

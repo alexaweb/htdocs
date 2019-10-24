@@ -1,5 +1,7 @@
 <?php
 	$current=33;
+	$page_category = "cuentas corrientes";
+	$page_name = "resetear saldos";
 	require_once('../../includes/cmi_common.php');
 
     $fecha = date("Y-m-d");
@@ -49,7 +51,7 @@
 
 ?>
 
-<h2>Reset Saldos</h2>
+<h4>Reset Saldos</h4>
 
 <form action="reset_saldos.php" method="post">
     Fecha:
@@ -61,7 +63,7 @@
             <option value=<?=$row['cc_id']?>><?=$row['entidad_codigo_b']?></option>
         <?php endforeach ?>
     </select><br />
-	<button class="button submit" type="submit" value="Submit">Reset</button>
+	<button class="button-reset" type="submit" value="Submit">Reset</button>
 </form>
 
 <?php require_once($path_include."/cmifooter.php");

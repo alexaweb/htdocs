@@ -1,5 +1,7 @@
 <?php
 	$current = "41";
+	$page_category = "admin";
+	$page_name = "ayuda";
 	require_once('../../includes/home_common.php');
 
     // At the top of the page we check to see whether the user is logged in or not

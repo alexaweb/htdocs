@@ -1,5 +1,7 @@
 <?php
 	$current=22;
+	$page_category = "cuentas corrientes";
+	$page_name = "interés";
 	require_once('../../includes/cmi_common.php');
 
 
@@ -57,7 +59,7 @@
 
 
 
-<h2>Interes devengado durante <?php echo $nombremes." - ".$ano;?></h2>
+<h4>Interes devengado durante <?php echo $nombremes." - ".$ano;?></h4>
 
 <div class="wrapper">
 	<div class="table">
@@ -107,7 +109,7 @@
                                                 <option value="2019" <?php if($ano==2019){ print ' selected'; }?>>2019</option>
     </select><br />
 
-  <button class="button submit" type="submit" value="Submit">Submit</button>
+  <button class="button-submit" type="submit" value="Submit">Submit</button>
 </form>
 
 

@@ -1,15 +1,17 @@
 <?php
 	$current=34;
+	$page_category = "indicadores";
+	$page_name = "actualizar indicadores";
 	//$dbfile = "indicadoresDB.php";
 	//$menufile = "indicadoresmenu.php";
         //require_once ('/var/www/includes/common.php');
 	//require_once('/var/www/includes/cmiheader.php');
         require_once('../../includes/indicadores_common.php');
-    
-   
+
+
     $fecha = date("Y-m-d");
-	
-    
+
+
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
     if(!empty($_POST))
@@ -18,11 +20,11 @@
         {
             die("Ingresar fecha.");
         }
-		
+
 		//acá debo obtener los indicadores antes de insertarlos
-		
+
         $tr_fecha = $_POST['tr_fecha'];
-		
+
         try
         {
             $sql = "call proc_insert_indicadores_uf_tabuf360('{$tr_fecha}',$tr_uf,$tr_tabuf360);";
@@ -34,11 +36,11 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
-        
+
+
         // This redirects the user back to the login page after they register
         header("Location: /audit/indicadores/display_indicadores_mes.php?");
-        
+
         // Calling die or exit after performing a redirect using the header function
         // is critical.  The rest of your PHP script will continue to execute and
         // will be sent to the user if you do not die or exit.
@@ -50,9 +52,9 @@
 
 <form action="/audit/indicadores/carga/carga_diaria_indicadores.php" method="get">
     Fecha:
-    <input type="text" name="fecha" value="<?php echo $fecha?>" /> 
+    <input type="text" name="fecha" value="<?php echo $fecha?>" />
     <br />
-	<button class="button submit" type="submit" value="Submit">Update</button>
+	<button class="button-submit" type="submit" value="Submit">Update</button>
 </form>
 
 

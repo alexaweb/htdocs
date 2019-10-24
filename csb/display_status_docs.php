@@ -2,10 +2,12 @@
 	$item_id = $_GET['item_id'];
 	$item_descripcion = $_GET['item_descripcion'];
 	$current="511";
+	$page_category = "abastecimiento CSB";
+	$page_name = "status documentos";
 	require_once('../../includes/csb_common.php');
-	
+
 	$fecha = date("Y-m-d", strtotime( '-0 days' ) );
-	
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -20,12 +22,12 @@
         {
            die("Failed to run query: " . $ex->getMessage());
         }
-		
-		
+
+
 ?>
 
 
-<h2>Status Docs <?php echo $item_descripcion;?></h2>
+<h5>Chilean SeaBass: Status Docs <?php echo $item_descripcion;?></h5>
 
 <div class="table">
 	<div class="rowheader">
@@ -58,4 +60,3 @@ Agregar Información:
 
 
 <?php require_once($path_include."/cmifooter.php");
-

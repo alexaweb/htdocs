@@ -117,7 +117,7 @@
 <link rel="icon"
       type="image/png"
       href="../../css/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="../../css/cmistyles.css" />
+<link rel="stylesheet" type="text/css" href="../css/cmistyles.css" />
 </head>
 <h1>Login</h1>
 <form action="login.php" method="post">

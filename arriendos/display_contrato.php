@@ -1,18 +1,20 @@
 <?php
 
 	$current=321;
+	$page_category = "arriendos";
+	$page_name = "detalle de contrato";
 	//$dbfile = "indicadoresDB.php";
 	//$menufile = "indicadoresmenu.php";
         //require_once ('/var/www/includes/common.php');
 	//require_once('/var/www/includes/cmiheader.php');
         require_once('../../includes/arriendos_common.php');
-    
-    
+
+
     $fecha_hoy = date("Y-m-d");
     	try
         {
             $sql_uf = "call get_valor_uf('{$fecha_hoy}');";
-			
+
             $stmt_uf = $db->prepare($sql_uf);
             $result_uf = $stmt_uf->execute();
             $data_uf = $stmt_uf->fetch();
@@ -28,14 +30,14 @@
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
 	$co_id = $_GET['co_id'];
-	
+
 	if(empty($_GET['co_id']))
     {
 			die("Ingresar contrato.");
     }
-	
 
-                
+
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -50,7 +52,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
+
 		        try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -65,8 +67,8 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
-		
+
+
 		try
         {
             $sql_3 = "call proc_display_cuotas_vencidas($co_id);";
@@ -80,7 +82,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
+
 		try
         {
             $sql_4 = "call proc_display_proximo_vencimiento($co_id);";
@@ -94,7 +96,7 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
+
 		try
         {
             $sql_5 = "call proc_display_pago_groupbyfecha($co_id);";
@@ -108,14 +110,14 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-		
-	
+
+
 
 
 ?>
 
-		
-				
+
+
 <h2>Contrato de <?=($data_co['co_tipo']==1?"Electricidad":"Arriendo");?></h2>
 	<a href="display_contratos.php" class="button">volver</a>
 <br><br>
@@ -127,7 +129,7 @@
 		<div class="textcell"></div>
 		<div class="cell"></div>
 		<div class="cell"></div>
-		
+
 	</div>
 <div class="row">
 			<div class="textcell">Cuotas vencidas:</div>
@@ -143,18 +145,18 @@
 			<?php if ($data_3['monto_uf']>0) echo '<div class="numbercell alert">';
 				else echo '<div class="numbercell">';?>
 			<?php
-			 if($data_co['co_tipo']==1) 
+			 if($data_co['co_tipo']==1)
 				{
 					echo "$ ".number_format($data_3['monto']);?></div>
 				<?php } else {?>
 				UF <?=number_format($data_3['monto_uf'],2);?><br>$ <?=number_format($data_3['monto_uf']*$valor_uf);?></div>
 			<?php }?>
-	
+
 			<div class="cell"></div>
 			<div class="textcell">Monto Proximo Vencimiento:</div>
 			<div class="numbercell">
 			<?php
-			 if($data_co['co_tipo']==1) 
+			 if($data_co['co_tipo']==1)
 				{?>
 				 se cobra vencido</div>
 				<?php } else {?>
@@ -176,7 +178,7 @@
 		<div class="cell">Fecha Aviso</div>
 		<div class="cell">Fecha Termino</div>
 	</div>
-    
+
         <div class="row">
 			<div class="cell"><?=$data_co['co_fecha_inicio'];?></div>
 			<div class="cell"><?=$data_co['pr_codigo'];?></div>
@@ -186,13 +188,14 @@
 			<div class="cell"><?=$data_co['co_fecha_aviso'];?></div>
 			<div class="cell"><?=$data_co['co_fecha_termino'];?></div>
 		</div>
-	    
+
 </div>
 
 
 
-<h3>Status Pagos Contrato</h3><a href="insert_cobro.php?co_id=<?=$data_co['co_id']?>" class="button">ingresar cobro</a>
-<a href="insert_pago.php?co_id=<?=$data_co['co_id']?>" class="button">ingresar pago</a>
+<h3>Status Pagos Contrato</h3>
+<a href="insert_cobro.php?co_id=<?=$data_co['co_id']?>" class="button-submit">ingresar cobro</a>
+<a href="insert_pago.php?co_id=<?=$data_co['co_id']?>" class="button-submit">ingresar pago</a>
 <br><br>
 <div class="table">
 	<div class="rowheader">
@@ -217,13 +220,13 @@
 			$atraso = (strtotime($row['pa_fecha']) - strtotime($row['cb_fecha_vencimiento']))/60/60/24;
 			if ($atraso > 0) {
 				echo number_format($atraso)." días";
-			} 
+			}
 			?></div>
 		</div>
 		<?php } ?>
     <?php endforeach ?>
 </div>
-				
+
 <h3>Pagos recibidos</h3>
 
 <div class="table">
@@ -243,8 +246,6 @@
     <?php endforeach ?>
 </div>
 
-	    
+
 
 <?php require_once($path_include."/cmifooter.php");
-
-

@@ -1,5 +1,7 @@
 <?php
 	$current = "43";
+	$page_category = "admin";
+	$page_name = "mi cuenta";
 	require_once('../../includes/home_common.php');
 
     // At the top of the page we check to see whether the user is logged in or not
@@ -164,7 +166,7 @@
     <input type="password" name="password" value="" /><br />
     <i>(leave blank if you do not want to change your password)</i>
     <br /><br />
-    <button class="button submit" type="submit" value="Submit">update</button>
+    <button class="button-submit" type="submit" value="Submit">update</button>
 
 </form>
 

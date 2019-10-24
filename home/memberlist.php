@@ -1,5 +1,7 @@
 <?php
 	$current = "42";
+	$page_category = "admin";
+	$page_name = "usuarios";
 	require_once('../../includes/home_common.php');
 
     // At the top of the page we check to see whether the user is logged in or not
@@ -43,7 +45,7 @@
     $rows = $stmt->fetchAll();
 ?>
 
-<h2>Memberlist</h2>
+
 <div class="table">
 	<div class="rowheader">
 		<div class="cell">ID</div>

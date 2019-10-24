@@ -1,18 +1,20 @@
 <?php
 
 	$current=322;
+	$page_category = "arriendos";
+	$page_name = "resumen período";
 	require_once('../../includes/arriendos_common.php');
-    
-    
-    
-    
+
+
+
+
 
     // This if statement checks to determine whether the transaction has been submitted
     // If it has, then the transaction insert code is run, otherwise the form is displayed
 	$periodo = $_GET['periodo'];
-	
-   
-                
+
+
+
         try
         {
             //$sql = "select tr_fecha, tr_tipo_transaccion, tr_moneda,tr_monto,tr_monto_uf,tr_descripcion from transacciones where tr_cc_id = '{$tr_cc_id}' order by tr_fecha;";
@@ -27,14 +29,14 @@
         {
             die("Failed to run query: " . $ex->getMessage());
         }
-        
+
 ?>
 
-		
-				
+
+
 <h2>Resumen Arriendos Período: <?=$periodo;?></h2>
-	
-	
+
+
 <div class="table">
 	<div class="rowheader">
 		<div class="textcell">Arrendatario</div>
@@ -62,7 +64,7 @@
 <?php
 		$total_cobrado = $total_cobrado + $cobro;
 		$total_pagado = $total_pagado + $pago;
-		
+
 ?>
     <?php endforeach ?>
 	    <div class="rowfooter">
@@ -74,6 +76,6 @@
 </div>
 
 <br><br>
-<button class="button submit" type="button" onclick="history.back();">volver</button>
+<button class="button-back" type="button" onclick="history.back();">volver</button>
 
 <?php require_once($path_include."/cmifooter.php");

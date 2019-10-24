@@ -1,5 +1,7 @@
 <?php
 	$current=22;
+	$page_category = "cuentas corrientes";
+	$page_name = "cartolas > nota de cobro";
 	require_once('../../includes/cmi_common.php');
   	setlocale(LC_TIME, 'es_ES.UTF-8');
     date_default_timezone_set('America/Santiago');
