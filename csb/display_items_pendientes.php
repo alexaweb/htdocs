@@ -112,12 +112,12 @@
 			<div class="descriptioncell"><a class="button-report"  href="display_status_item.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>">S</a><?=$row['si_status']?></div>
 			<div class="descriptioncell"><a class="button-report"  href="display_status_docs.php?item_id=<?=$row['item_id']?>&item_descripcion=<?=$row['item_descripcion']?>">D</a><?=$row['sd_status']?></div>
 			<div class="cell"><?=$row['item_proveedor']?></div>
-			<div class="centercell"><? echo ($row['item_cotizacion'] <> "") ? showCheckmark($row['item_cotizacion']) : '';?></div>
-			<div class="centercell"><? echo ($row['item_factura'] <> "") ? showCheckmark($row['item_factura']) : '';?></div>
+			<div class="centercell"><?php echo ($row['item_cotizacion'] <> "") ? showCheckmark($row['item_cotizacion']) : '';?></div>
+			<div class="centercell"><?php echo ($row['item_factura'] <> "") ? showCheckmark($row['item_factura']) : '';?></div>
 			<div class="cell"><?=$row['item_fecha_rfq']?></div>
                         <div class="cell"><?=$row['item_thc']?></div>
 			<div class="cell"><?=$row['item_container']?></div>
-      <div class="cell"><a target="_blank" href="<?=$url_carrier?><?=$row['item_bl_awb']?>"><? echo ($row['item_bl_awb'] <> "") ? $track : '';?></a><a href="display_items_bl_pendientes.php?p_bl=<?=$row['item_bl_awb']?>"><?=$row['item_bl_awb']?></a></div>
+      <div class="cell"><a target="_blank" href="<?=$url_carrier?><?=$row['item_bl_awb']?>"><?php echo ($row['item_bl_awb'] <> "") ? $track : '';?></a><a href="display_items_bl_pendientes.php?p_bl=<?=$row['item_bl_awb']?>"><?=$row['item_bl_awb']?></a></div>
 			<div class="cell"><?=$row['item_carrier']?></div>
 			<div class="cell"><?=$row['item_origen']?></div>
 		</div>
