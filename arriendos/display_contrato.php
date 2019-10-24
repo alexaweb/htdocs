@@ -119,7 +119,7 @@
 
 
 <h2>Contrato de <?=($data_co['co_tipo']==1?"Electricidad":"Arriendo");?></h2>
-	<a href="display_contratos.php" class="button">volver</a>
+	<a href="display_contratos.php" class="button-back">volver</a>
 <br><br>
 
 <div class="table">
