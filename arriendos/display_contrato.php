@@ -145,7 +145,7 @@
 			<?php if ($data_3['monto_uf']>0) echo '<div class="numbercell alert">';
 				else echo '<div class="numbercell">';?>
 			<?php
-			 if($data_co['co_tipo']==1)
+			 if($data_co['co_tipo']<>0)
 				{
 					echo "$ ".number_format($data_3['monto']);?></div>
 				<?php } else {?>
