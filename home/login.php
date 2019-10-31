@@ -94,8 +94,8 @@
             $_SESSION['user'] = $row;
 
             // Redirect the user to the private members-only page.
-            header("Location: /audit/cmi/display_saldos.php");
-            die("Redirecting to: /audit/cmi/display_saldos.php");
+            header("Location: /audit/arriendos/display_morosos.php");
+            die("Redirecting to: /audit/arriendos/display_morosos.php");
         }
         else
         {
