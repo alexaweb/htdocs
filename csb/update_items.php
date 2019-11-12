@@ -47,14 +47,14 @@ Agregar Información:
 
 	<!--Status: <input type="text" name="item_status" value="<?php echo $item_status?>"><br>-->
 	<span style="display:inline">Status:
-  <input type="radio" name="item_status" value="0" ><p class="row"> 0: terminado</p>  &nbsp;&nbsp;&nbsp;
+  <input type="radio" name="item_status" value="00" ><p class="row"> 0: terminado</p>  &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="1" ><p class="row"> 1: normal</p>  &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="2" ><p class="row warning">2: warning</p> &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="3" ><p class="row alert" >3: alert</p> &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="4" ><p class="row sea" >4: @ sea</p> &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="5" ><p class="row cicarelli">5: @ cicarelli</p> &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="6" ><p class="row puq" >6: @ puq</p> &nbsp;&nbsp;&nbsp;
-</span><br><br>
+	span><br><br>
   <input type="hidden" name="w_string" value="<?=$where_string;?>">
   <button class="button-submit" type="submit" value="Submit">Submit</button>
 </form>
