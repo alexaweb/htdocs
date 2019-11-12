@@ -54,7 +54,7 @@ Agregar Información:
 	<input type="radio" name="item_status" value="4" ><p class="row sea" >4: @ sea</p> &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="5" ><p class="row cicarelli">5: @ cicarelli</p> &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="6" ><p class="row puq" >6: @ puq</p> &nbsp;&nbsp;&nbsp;
-	span><br><br>
+</span><br><br>
   <input type="hidden" name="w_string" value="<?=$where_string;?>">
   <button class="button-submit" type="submit" value="Submit">Submit</button>
 </form>
