@@ -53,9 +53,10 @@
 ?>
 
 
-
+<form name="formUpdate" method="post" action="update_items.php">
 <div class="table">
 	<div class="rowheader">
+		<div class="centercell"></div>
 		<div class="centercell"><a class="rowheader" href="display_items_pendientes.php?p_orden=8">Status Item</a></div>
 		<div class="cell"><a class="rowheader" href="display_items_pendientes.php?p_orden=1">Buque</a></div>
 		<div class="descriptioncell">Descripcion</div>
@@ -102,7 +103,7 @@
 
 
                     ?>
-
+      <div class="centercell"><input type="checkbox" name="items[]" value="<?php echo $row['item_id'];?>"></div>
 			<div class="centercell"><a class="button-report" href="edit_item.php?item_id=<?=$row['item_id']?>&item_buque=<?=$row['item_buque']?>&item_descripcion=
 			<?=$row['item_descripcion']?>&item_origen=<?=$row['item_origen']?>&item_proveedor=<?=$row['item_proveedor']?>&item_cotizacion=<?=$row['item_cotizacion']?>&item_factura=
 			<?=$row['item_factura']?>&item_fecha_rfq=<?=$row['item_fecha_rfq']?>&item_bl_awb=<?=$row['item_bl_awb']?>&item_container=
@@ -123,7 +124,8 @@
 		</div>
     <?php endforeach ?>
 </div>
-
+<button class="button-submit" type="submit" value="Update">Update</button>
+</form>
 <div>
 	<h2>Download links:</h2>
 <a href="export/export_items_pendientes_xls.php"><img src="/audit/images/xls-icon.png"></a>
