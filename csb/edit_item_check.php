@@ -95,6 +95,7 @@ $item_origen = $_POST['item_origen'];
      <button class="button-back" type="button" onclick="history.back();">BACK</button></div>
     <div><button class="button-submit" type="submit" value="Submit">OK</button>
 	</div></div></div></div>
+	0: terminado<br>
                         1: normal <br>
 <div class="row warning">2: warning</div>
 <div class="row alert">3: alert </div>

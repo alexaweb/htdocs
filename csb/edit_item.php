@@ -54,6 +54,7 @@ Agregar Información:
 	Carrier: <input type="text" name="item_carrier" value="<?php echo $item_carrier?>"><br>
 	<!--Status: <input type="text" name="item_status" value="<?php echo $item_status?>"><br>-->
 	<span style="display:inline">Status:
+	<input type="radio" name="item_status" value="00" ><p class="row"> 0: terminado</p>  &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="1" <?php echo ($item_status==1) ?  "checked" : "" ;  ?>><p class="row"> 1: normal</p>  &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="2" <?php echo ($item_status==2) ?  "checked" : "" ;  ?>><p class="row warning">2: warning</p> &nbsp;&nbsp;&nbsp;
 	<input type="radio" name="item_status" value="3" <?php echo ($item_status==3) ?  "checked" : "" ;  ?>><p class="row alert" >3: alert</p> &nbsp;&nbsp;&nbsp;
