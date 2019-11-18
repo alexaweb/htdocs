@@ -113,12 +113,13 @@
 
 ?>
 <head profile="http://www.w3.org/2005/10/profile">
-<title>CMI - Login</title>
+<title>Gestión IP - Login</title>
 <link rel="icon"
-      type="image/png"
-      href="../../css/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="../css/cmistyles.css" />
+  type="image/png"
+  href="/audit/css/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/audit/css/common_css.css" />
 </head>
+<section id="maincontent" >
 <h1>Login</h1>
 <form action="login.php" method="post">
     Usuario:<br />
@@ -127,6 +128,7 @@
     Clave:<br />
     <input type="password" name="password" value="" />
     <br /><br />
-    <input type="submit" value="Login" />
+    <button class="button-submit" type="submit" value="Login">login</button>
 </form>
-<a href="/home/register.php">Registrarse</a>
+<a href="/home/register.php">Registro de usuario</a>
+</section>
